@@ -1,2 +1,3 @@
 open frameworks addon to control the blackmagic smart videohub SDI router.
-Should work with all blackmagic smart video line (not tested).
+Should work with all blackmagic smart video line.
+Tested only with smart videohub.
