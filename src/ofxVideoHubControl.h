@@ -22,13 +22,29 @@ public:
     
     map <int, int> getRoutingMatrix ();
     void setRoute (int output, int input);
-    void checkRoute ();
+    
+    void checkRouting ();
+    void checkLabels ();
     
     string getReceiveStatus();
+    
+    bool isInputLabelsUpdate();
+    bool isOutputLabelsUpdate();    
+    bool isRoutingUpdate();
+    
+    void setInputLabel(int idLabel, string label);
+    void setOutputLabel(int idLabel, string label);
+    map <int, string> getInputLabels();
+    map <int, string> getOutputLabels();
+    
+    
     
 private:
     /* route map, output use as key*/
     map <int, int> routingMatrix;
+
+    map <int, string> inputLabelTable;
+    map <int, string> outputLabelTable;
     
     ofxTCPClient videohubClient;
     
@@ -41,4 +57,6 @@ private:
     bool weConnected;
     
     string rcvStatus;
+    
+    bool routingUpdate, inputLabelsUpdate, outputLabelsUpdate ;
 };
